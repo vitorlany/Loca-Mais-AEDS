@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1655735451 source:e:\github-repositorios\loca-mais-aeds\loca-mais\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"locadora.h"
+
+1655735444 e:\github-repositorios\loca-mais-aeds\loca-mais\locadora.h
+	"locadora.c"
+
+1655735461 e:\github-repositorios\loca-mais-aeds\loca-mais\locadora.c
+
