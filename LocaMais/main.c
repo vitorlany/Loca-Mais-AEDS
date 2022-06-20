@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include "locadora.h"
 
 struct construtorEndereco{
     char rua[50];
@@ -17,14 +15,14 @@ struct construtorCliente{
 };
 typedef struct construtorCliente tipoCliente;
 
-
 int main()
 {
     tipoCliente cliente;
-
-    novoCliente(tipoCliente & cliente);
-
+    cliente.codigo = 15;
+    strcpy(cliente.nome,"Vitor");
+    strcpy(cliente.endereco.rua, "Nome da Rua");
+    cliente.endereco.numero = 123;
+    cliente.endereco.cep = 123456;
     printf("Cliente: %i, %s, %s, %i, %i", cliente.codigo, cliente.nome, cliente.endereco.rua, cliente.endereco.numero, cliente.endereco.cep);
-    teste();
     return 0;
 }
