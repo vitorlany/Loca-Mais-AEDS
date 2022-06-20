@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct construtorEndereco{
     char rua[50];
@@ -15,14 +16,26 @@ struct construtorCliente{
 };
 typedef struct construtorCliente tipoCliente;
 
+
+
+void novoCliente(tipoCliente * cliente, char nome[], char rua[], int numeroDaRua, int cep);
+
+
+
 int main()
 {
     tipoCliente cliente;
-    cliente.codigo = 15;
-    strcpy(cliente.nome,"Vitor");
-    strcpy(cliente.endereco.rua, "Nome da Rua");
-    cliente.endereco.numero = 123;
-    cliente.endereco.cep = 123456;
+
+    novoCliente(&cliente, "Vitor", "Nome da Rua", 123, 12345);
+
     printf("Cliente: %i, %s, %s, %i, %i", cliente.codigo, cliente.nome, cliente.endereco.rua, cliente.endereco.numero, cliente.endereco.cep);
     return 0;
+}
+
+void novoCliente(tipoCliente * cliente, char nome[], char rua[], int numeroDaRua, int cep) {
+    cliente->codigo = 15;
+    strcpy(cliente->nome, nome);
+    strcpy(cliente->endereco.rua, rua);
+    cliente->endereco.numero = numeroDaRua;
+    cliente->endereco.cep = cep;
 }
