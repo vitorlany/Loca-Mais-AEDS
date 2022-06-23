@@ -93,15 +93,15 @@ void exemploLocacao();
 
 int main()
 {
-    cout << "Exemplo de Cliente" << endl;
+    cout << "Exemplo de Cliente =============================" << endl;
     exemploCliente();
     cout << endl;
 
-    cout << "Exemplo de Veiculo" << endl;
+    cout << "Exemplo de Veiculo =============================" << endl;
     exemploVeiculo();
     cout << endl;
 
-    cout << "Exemplo de Locacao" << endl;
+    cout << "Exemplo de Locacao =============================" << endl;
     exemploLocacao();
     cout << endl;
 
@@ -122,6 +122,7 @@ void exemploCliente() {
 void exemploVeiculo() {
     ClasseVeiculo carro("Faz vrun vrun", "Maverik V8", "Preto", "ABC-1234", 80, 2);
 
+    cout << "Codigo: " << carro.codigo << endl;
     cout << "Descricao: " << carro.descricao << endl;
     cout << "Modelo: " << carro.modelo << endl;
     cout << "Cor: " << carro.cor << endl;
@@ -132,7 +133,10 @@ void exemploVeiculo() {
 }
 
 void exemploLocacao() {
-    ClasseLocacao locacao("01-01-2022", "05-05-2022", 1, 0, 0);
+    ClasseCliente cliente("Raul", "Rua teste", 456, 234, 1111);
+    ClasseVeiculo carro("SUV", "BMW X6", "Preto", "DEF-5678", 80, 4);
+
+    ClasseLocacao locacao("01-01-2022", "05-05-2022", 1, cliente.codigo, carro.codigo);
 
     cout << "Codigo: " << locacao.codigoLocacao << endl;
     cout << "Retirada: " << locacao.dataRetirada << endl;
@@ -141,4 +145,10 @@ void exemploLocacao() {
     cout << "Dias: " << locacao.dias << endl;
     cout << "Codigo do Cliente: " << locacao.codigoCliete << endl;
     cout << "Codigo do Veiculo: " << locacao.codigoVeiculo << endl;
+
+    cout << endl;
+
+    cout << "Cliente: " << cliente.nome << endl;
+    cout << "Veiculo: " << carro.modelo << endl;
+
 }
