@@ -14,7 +14,9 @@ class ClasseLocacao
         int dias;
         int codigoCliete;
         int codigoVeiculo;
-        ClasseLocacao(string _dataRetirada, string _dataDevolucao, int _seguro, int _dias, int _codigoCliete, int _codigoVeiculo);
+        int deletado = 0;
+
+        ClasseLocacao();
 };
 
 #endif // CLASSELOCACAO_H

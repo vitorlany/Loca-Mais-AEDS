@@ -18,8 +18,9 @@ class ClasseCliente
         string nome;
         ClasseClienteEndereco endereco;
         int telefone;
+        int deletado = 0;
 
-        ClasseCliente(string _nome, string _rua, int _numero, int _cep, int _telefone);
+        ClasseCliente();
 };
 
 #endif // CLASSECLIENTE_H

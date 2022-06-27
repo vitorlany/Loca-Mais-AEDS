@@ -1,14 +1,29 @@
 #include "ClasseLocacao.h"
+#include <iostream>
+
+using namespace std;
 
 int proximoCodigoLocacao = 0;
 
-ClasseLocacao::ClasseLocacao(string _dataRetirada, string _dataDevolucao, int _seguro, int _dias, int _codigoCliete, int _codigoVeiculo)
+ClasseLocacao::ClasseLocacao()
 {
     codigoLocacao = proximoCodigoLocacao++;
-    dataRetirada = _dataRetirada;
-    dataDevolucao = _dataDevolucao;
-    seguro = _seguro;
-    dias = _dias;
-    codigoCliete = _codigoCliete;
-    codigoVeiculo = _codigoVeiculo;
+
+    cout << "Insira a data de retirada (string): ";
+    cin >> dataRetirada;
+
+    cout << "Insira a data de devolucao (string): ";
+    cin >> dataDevolucao;
+
+    cout << "Insira o seguro (int): ";
+    cin >> seguro;
+
+    cout << "Insira os dias (int): ";
+    cin >> dias;
+
+    cout << "Insira o codigo do cliente (int): ";
+    cin >> codigoCliete;
+
+    cout << "Insira o codigo do veiculo (int): ";
+    cin >> codigoVeiculo;
 }

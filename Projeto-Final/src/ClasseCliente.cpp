@@ -1,13 +1,26 @@
 #include "ClasseCliente.h"
+#include <iostream>
+
+using namespace std;
 
 int proximoCodigoCliente = 0;
 
-ClasseCliente::ClasseCliente(string _nome, string _rua, int _numero, int _cep, int _telefone)
+ClasseCliente::ClasseCliente()
 {
     codigo = proximoCodigoCliente++;
-    nome = _nome;
-    endereco.rua = _rua;
-    endereco.numero = _numero;
-    endereco.cep = _cep;
-    telefone = _telefone;
+
+    cout << "Insira o nome (string): ";
+    cin >> nome;
+
+    cout << "Insira a rua (string): ";
+    cin >> endereco.rua;
+
+    cout << "Insira o número (int): ";
+    cin >> endereco.numero;
+
+    cout << "Insira o cep (int): ";
+    cin >> endereco.cep;
+
+    cout << "Insira o telefone (int): ";
+    cin >> telefone;
 }
