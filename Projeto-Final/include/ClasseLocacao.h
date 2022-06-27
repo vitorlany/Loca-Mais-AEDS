@@ -17,6 +17,7 @@ class ClasseLocacao
         int deletado = 0;
 
         ClasseLocacao();
+        void deletarLocacao();
 };
 
 #endif // CLASSELOCACAO_H

@@ -24,3 +24,19 @@ ClasseCliente::ClasseCliente()
     cout << "Insira o telefone (int): ";
     cin >> telefone;
 }
+
+void ClasseCliente::deletarCliente()
+{
+    deletado = 1;
+}
+
+void ClasseCliente::dadosCliente()
+{
+    cout << "Codigo: " << codigo << endl;
+    cout << "Nome: " << nome << endl;
+    cout << "Rua: " << endereco.rua << endl;
+    cout << "Numero: " << endereco.numero << endl;
+    cout << "Cep: " << endereco.cep << endl;
+    cout << "Telefone: " << telefone << endl;
+    cout << "Deletado: " << deletado << endl;
+}

@@ -21,6 +21,8 @@ class ClasseCliente
         int deletado = 0;
 
         ClasseCliente();
+        void deletarCliente();
+        void dadosCliente();
 };
 
 #endif // CLASSECLIENTE_H

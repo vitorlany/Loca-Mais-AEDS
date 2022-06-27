@@ -27,3 +27,8 @@ ClasseLocacao::ClasseLocacao()
     cout << "Insira o codigo do veiculo (int): ";
     cin >> codigoVeiculo;
 }
+
+void ClasseLocacao::deletarLocacao()
+{
+    deletado = 1;
+}

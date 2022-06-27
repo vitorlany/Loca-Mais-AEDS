@@ -5,7 +5,7 @@ using namespace std;
 
 int proximoCodigoVeiculo = 0;
 
-ClasseVeiculo::ClasseVeiculo(string _descricao, string _modelo, string _cor, string _placa, int _valor, int _ocupantes)
+ClasseVeiculo::ClasseVeiculo()
 {
     codigo = proximoCodigoVeiculo++;
 
@@ -26,4 +26,22 @@ ClasseVeiculo::ClasseVeiculo(string _descricao, string _modelo, string _cor, str
 
     cout << "Insira quantos ocupantes (int): ";
     cin >> ocupantes;
+}
+
+void ClasseVeiculo::deletarVeiculo()
+{
+    deletado = 1;
+}
+
+void ClasseVeiculo::dadosVeiculo()
+{
+    cout << "Codigo: " << codigo << endl;
+    cout << "Descricao: " << descricao << endl;
+    cout << "Modelo: " << modelo << endl;
+    cout << "Cor: " << cor << endl;
+    cout << "Placa: " << placa << endl;
+    cout << "Valor: " << valor << endl;
+    cout << "Status: " << status << endl;
+    cout << "Ocupantes: " << ocupantes << endl;
+    cout << "Deletado: " << deletado << endl;
 }

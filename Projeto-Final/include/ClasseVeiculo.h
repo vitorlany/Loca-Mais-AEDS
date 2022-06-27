@@ -18,7 +18,9 @@ class ClasseVeiculo
         int status = 1;
         int deletado = 0;
 
-        ClasseVeiculo(string _descricao, string _modelo, string _cor, string _placa, int _valor, int _ocupantes);
+        ClasseVeiculo();
+        void deletarVeiculo();
+        void dadosVeiculo();
 };
 
 #endif // CLASSEVEICULO_H
