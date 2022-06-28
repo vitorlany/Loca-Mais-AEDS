@@ -2,13 +2,13 @@
 #include "ClasseCliente.h"
 #include "ClasseVeiculo.h"
 #include "ClasseLocacao.h"
+#include "locacao-sistema.h"
 
 using namespace std;
 
 int main()
 {
-    ClasseVeiculo carro;
-    carro.dadosVeiculo();
+    teste();
 
     return 0;
 }
