@@ -37,6 +37,8 @@
 		<Unit filename="include/ClasseCliente.h" />
 		<Unit filename="include/ClasseLocacao.h" />
 		<Unit filename="include/ClasseVeiculo.h" />
+		<Unit filename="locacao-sistema.cpp" />
+		<Unit filename="locacao-sistema.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/ClasseCliente.cpp" />
 		<Unit filename="src/ClasseLocacao.cpp" />
