@@ -18,6 +18,7 @@ class ClasseLocacao
 
         ClasseLocacao();
         void deletarLocacao();
+        void dadosLocacao();
 };
 
 #endif // CLASSELOCACAO_H

@@ -1,6 +1,6 @@
 #ifndef LOCACAO-SISTEMA_H_INCLUDED
 #define LOCACAO-SISTEMA_H_INCLUDED
 
-void teste();
+
 
 #endif // LOCACAO-SISTEMA_H_INCLUDED
