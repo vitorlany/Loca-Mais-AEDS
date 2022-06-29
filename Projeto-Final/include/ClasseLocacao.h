@@ -15,6 +15,7 @@ class ClasseLocacao
         int codigoCliete;
         int codigoVeiculo;
         int deletado = 0;
+        int valorFinal;
 
         ClasseLocacao();
         void deletarLocacao();

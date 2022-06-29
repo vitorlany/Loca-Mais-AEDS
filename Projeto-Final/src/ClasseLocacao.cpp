@@ -10,6 +10,7 @@ int proximoCodigoLocacao = 0;
 
 ClasseLocacao::ClasseLocacao()
 {
+    int _valorFinal = 0;
     codigoLocacao = proximoCodigoLocacao++;
 
     cout << "Insira quantos dias (int): ";
@@ -25,24 +26,18 @@ ClasseLocacao::ClasseLocacao()
 
     cout << "Insira o codigo do veiculo (int): ";
     cin >> codigoVeiculo;
+
+    if (seguro) {
+        _valorFinal+=50;
+    }
+    // Funcao para pegar pelo codigo do veiculo o valor da diaria e multiplicar pelos dias
+    valorFinal = _valorFinal;
 }
 
 void ClasseLocacao::deletarLocacao()
 {
     deletado = 1;
 }
-
-/*
-
-        int codigoLocacao;
-        string dataRetirada;
-        string dataDevolucao;
-        int seguro;
-        int dias;
-        int codigoCliete;
-        int codigoVeiculo;
-        int deletado = 0;
-*/
 
 void ClasseLocacao::dadosLocacao()
 {
@@ -53,6 +48,7 @@ void ClasseLocacao::dadosLocacao()
     cout << "Dias: " << dias << endl;
     cout << "Cliente: " << codigoCliete << endl;
     cout << "Veiculo: " << codigoVeiculo << endl;
+    cout << "Valor Final: " << valorFinal << endl;
     cout << "Deletado: " << deletado << endl;
 }
 
