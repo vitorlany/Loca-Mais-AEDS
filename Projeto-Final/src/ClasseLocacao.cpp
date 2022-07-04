@@ -1,4 +1,5 @@
 #include "ClasseLocacao.h"
+#include "ClasseCliente.h"
 #include "ClasseVeiculo.h"
 #include <ctime>
 #include <string.h>
@@ -8,6 +9,7 @@
 void calcularData(int dias, char _dataRetirada[], char _dataDevolucao[]);
 void salvarDados(ClasseLocacao locacao);
 int precoDiaria(int codigoVeiculo);
+int clienteExiste(int codigoCliente);
 
 using namespace std;
 
@@ -32,10 +34,13 @@ void ClasseLocacao::criarLocacao()
     cin >> codigoCliete;
     fflush(stdin);
 
+    cout << clienteExiste(codigoCliete) << endl;
+
     cout << "Insira o codigo do veiculo (int): ";
     cin >> codigoVeiculo;
     fflush(stdin);
-    cout << precoDiaria(codigoVeiculo) << endl;
+
+    _valorFinal += (dias * precoDiaria(codigoVeiculo));
 
     if (seguro) {
         _valorFinal+=50;
@@ -83,6 +88,46 @@ void calcularData(int dias, char _dataRetirada[], char _dataDevolucao[]) {
     strftime(devolucaoStr, 80, "%d/%m/%Y", devolucao);
 
     strcpy(_dataDevolucao, devolucaoStr);
+}
+
+int clienteExiste(int codigoCliente) {
+    int resposta = 0,pos, posicao;
+    ClasseCliente molde;
+    fstream fio;
+    fio.open ("dados/clientes.dat", ios::in|ios::out); //abre para leitura e escrita (ios::out) (ios::in) ios::app |
+    fio.clear();
+    fio.seekg(0,ios::beg); //coloca ponteiro no inicio do arquivo
+    while (fio.read ((char *)&molde,sizeof(ClasseCliente)))  // le do arquivo
+    {
+        pos = fio.tellp();
+        pos = fio.tellg();
+        if (molde.codigo == codigoCliente) {
+            resposta = 1;
+        }
+    }
+    fio.clear(); // limpa "eof = final de arquivo" para proximo uso
+    fio.close();
+    return resposta;
+}
+
+int veiculoExiste(int codigoVeiculo) {
+    int resposta = 0,pos, posicao;
+    ClasseVeiculo molde;
+    fstream fio;
+    fio.open ("dados/veiculos.dat", ios::in|ios::out); //abre para leitura e escrita (ios::out) (ios::in) ios::app |
+    fio.clear();
+    fio.seekg(0,ios::beg); //coloca ponteiro no inicio do arquivo
+    while (fio.read ((char *)&molde,sizeof(ClasseVeiculo)))  // le do arquivo
+    {
+        pos = fio.tellp();
+        pos = fio.tellg();
+        if (molde.codigo == codigoVeiculo) {
+            resposta = 1;
+        }
+    }
+    fio.clear(); // limpa "eof = final de arquivo" para proximo uso
+    fio.close();
+    return resposta;
 }
 
 int precoDiaria(int codigoVeiculo) {

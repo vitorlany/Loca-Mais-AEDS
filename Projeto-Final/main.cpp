@@ -11,8 +11,10 @@ using namespace std;
 
 int main()
 {
+
     ClasseLocacao locacao;
     locacao.criarLocacao();
+    locacao.dadosLocacao();
 
     return 0;
 }
