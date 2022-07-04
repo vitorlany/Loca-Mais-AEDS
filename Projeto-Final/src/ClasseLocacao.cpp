@@ -21,6 +21,7 @@ void ClasseLocacao::criarLocacao()
 {
     int _valorFinal = 0;
     codigoLocacao = proximoCodigoLocacao++;
+    cout << "Codigo: " << codigoLocacao << endl;
 
     cout << "Insira quantos dias (int): ";
     cin >> dias;
