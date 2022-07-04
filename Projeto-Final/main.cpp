@@ -12,9 +12,12 @@ using namespace std;
 int main()
 {
 
-    ClasseLocacao locacao;
+
+
+    /*ClasseLocacao locacao;
     locacao.criarLocacao();
     locacao.dadosLocacao();
+    salvarLocacao(locacao);*/
 
     return 0;
 }

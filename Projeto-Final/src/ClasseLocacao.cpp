@@ -9,11 +9,13 @@
 void calcularData(int dias, char _dataRetirada[], char _dataDevolucao[]);
 void salvarDados(ClasseLocacao locacao);
 int precoDiaria(int codigoVeiculo);
+int veiculoExiste(int codigoVeiculo);
 int clienteExiste(int codigoCliente);
+int ultimoCodigo();
 
 using namespace std;
 
-int proximoCodigoLocacao = 0;
+int proximoCodigoLocacao = (ultimoCodigo() + 1);
 
 void ClasseLocacao::criarLocacao()
 {
@@ -30,15 +32,27 @@ void ClasseLocacao::criarLocacao()
     cin >> seguro;
     fflush(stdin);
 
-    cout << "Insira o codigo do cliente (int): ";
-    cin >> codigoCliete;
-    fflush(stdin);
+    do {
+        cout << "Insira o codigo do cliente (int): ";
+        cin >> codigoCliete;
+        fflush(stdin);
+        if (clienteExiste(codigoCliete)) {
+            break;
+        } else {
+            cout << "O cliente nao existe!" << endl;
+        }
+    } while(1);
 
-    cout << clienteExiste(codigoCliete) << endl;
-
-    cout << "Insira o codigo do veiculo (int): ";
-    cin >> codigoVeiculo;
-    fflush(stdin);
+    do {
+        cout << "Insira o codigo do veiculo (int): ";
+        cin >> codigoVeiculo;
+        fflush(stdin);
+        if (clienteExiste(veiculoExiste(codigoVeiculo))) {
+            break;
+        } else {
+            cout << "O veiculo nao existe!" << endl;
+        }
+    } while(1);
 
     _valorFinal += (dias * precoDiaria(codigoVeiculo));
 
@@ -148,4 +162,22 @@ int precoDiaria(int codigoVeiculo) {
     fio.clear(); // limpa "eof = final de arquivo" para proximo uso
     fio.close();
     return resposta;
+}
+
+int ultimoCodigo() {
+    int ultimo = 0,pos, posicao;
+    ClasseLocacao molde;
+    fstream fio;
+    fio.open ("dados/locacoes.dat", ios::in|ios::out); //abre para leitura e escrita (ios::out) (ios::in) ios::app |
+    fio.clear();
+    fio.seekg(0,ios::beg); //coloca ponteiro no inicio do arquivo
+    while (fio.read ((char *)&molde,sizeof(ClasseLocacao)))  // le do arquivo
+    {
+        pos = fio.tellp();
+        pos = fio.tellg();
+        ultimo = molde.codigoLocacao;
+    }
+    fio.clear(); // limpa "eof = final de arquivo" para proximo uso
+    fio.close();
+    return ultimo;
 }
