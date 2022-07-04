@@ -8,8 +8,8 @@ class ClasseLocacao
 {
     public:
         int codigoLocacao;
-        string dataRetirada;
-        string dataDevolucao;
+        char dataRetirada[50];
+        char dataDevolucao[50];
         int seguro;
         int dias;
         int codigoCliete;
@@ -17,7 +17,7 @@ class ClasseLocacao
         int deletado = 0;
         int valorFinal;
 
-        ClasseLocacao();
+        void criarLocacao();
         void deletarLocacao();
         void dadosLocacao();
 };

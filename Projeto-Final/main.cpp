@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <ctime>
 
 #include "ClasseCliente.h"
@@ -10,8 +11,8 @@ using namespace std;
 
 int main()
 {
-    ClasseLocacao local;
-    local.dadosLocacao();
+    ClasseLocacao locacao;
+    locacao.criarLocacao();
 
     return 0;
 }

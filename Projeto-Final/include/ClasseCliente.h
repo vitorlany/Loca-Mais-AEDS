@@ -6,7 +6,7 @@ using namespace std;
 
 class ClasseClienteEndereco {
     public:
-        string rua;
+        char rua[50];
         int numero;
         int cep;
 };
@@ -15,14 +15,14 @@ class ClasseCliente
 {
     public:
         int codigo;
-        string nome;
+        char nome[50];
         ClasseClienteEndereco endereco;
         int telefone;
         int deletado = 0;
 
-        ClasseCliente();
-        void deletarCliente();
+        void criarCliente();
         void dadosCliente();
+        void deletarCliente();
 };
 
 #endif // CLASSECLIENTE_H

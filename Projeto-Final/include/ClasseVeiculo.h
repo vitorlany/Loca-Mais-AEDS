@@ -8,19 +8,20 @@ class ClasseVeiculo
 {
     public:
         int codigo;
-        string descricao;
-        string modelo;
-        string cor;
-        string placa;
+        char descricao[50];
+        char modelo[50];
+        char cor[50];
+        char placa[50];
         int valor;
         int ocupantes;
         // 0 = Alugado / 1 = Disponivel / 2 = Manutencao
         int status = 1;
         int deletado = 0;
 
-        ClasseVeiculo();
-        void deletarVeiculo();
+        void criarVeiculo();
         void dadosVeiculo();
+        void alterarVeiculo();
+        void deletarVeiculo();
 };
 
 #endif // CLASSEVEICULO_H

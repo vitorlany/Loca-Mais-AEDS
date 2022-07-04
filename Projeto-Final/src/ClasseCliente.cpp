@@ -5,24 +5,29 @@ using namespace std;
 
 int proximoCodigoCliente = 0;
 
-ClasseCliente::ClasseCliente()
+void ClasseCliente::criarCliente()
 {
     codigo = proximoCodigoCliente++;
 
     cout << "Insira o nome (string): ";
-    cin >> nome;
+    gets(nome);
+    fflush(stdin);
 
     cout << "Insira a rua (string): ";
-    cin >> endereco.rua;
+    gets(endereco.rua);
+    fflush(stdin);
 
     cout << "Insira o número (int): ";
     cin >> endereco.numero;
+    fflush(stdin);
 
     cout << "Insira o cep (int): ";
     cin >> endereco.cep;
+    fflush(stdin);
 
     cout << "Insira o telefone (int): ";
     cin >> telefone;
+    fflush(stdin);
 }
 
 void ClasseCliente::deletarCliente()
