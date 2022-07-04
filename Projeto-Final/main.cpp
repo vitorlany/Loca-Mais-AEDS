@@ -35,18 +35,21 @@ int main()
             case 1: {
                 ClasseCliente cliente;
                 cliente.criarCliente();
+                cliente.dadosCliente();
                 salvarCliente(cliente);
                 break;
             }
             case 2: {
                 ClasseVeiculo veiculo;
                 veiculo.criarVeiculo();
+                veiculo.dadosVeiculo();
                 salvarVeiculo(veiculo);
                 break;
             }
             case 3: {
                 ClasseLocacao locacao;
                 locacao.criarLocacao();
+                locacao.dadosLocacao();
                 salvarLocacao(locacao);
                 break;
             }
