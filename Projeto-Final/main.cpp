@@ -26,7 +26,7 @@ int main()
         cout << "   a) Veículos" << endl;
         cout << "6 - Locações do cliente" << endl;
         cout << "7 - Fidelidade" << endl;
-        cout << "8 - " << endl;
+        cout << "8 - Carro pelo valor" << endl;
         cout << "Escolha:  ";
         cin >> opcao;
         fflush(stdin);
@@ -70,7 +70,10 @@ int main()
                 calcularFidelidade();
                 break;
             }
-
+            case 8: {
+                carroPorValor();
+                break;
+            }
         }
     }while(1);
     return 0;

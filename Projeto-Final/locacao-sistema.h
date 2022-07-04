@@ -14,4 +14,5 @@ void mostrarLocacao();
 void locacoesDoCliente();
 void calcularFidelidade();
 void pagarLocacao();
+void carroPorValor();
 #endif // LOCACAO-SISTEMA_H_INCLUDED

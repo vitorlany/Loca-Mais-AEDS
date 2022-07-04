@@ -245,3 +245,30 @@ void pagarLocacao() {
     fio.clear(); // limpa "eof = final de arquivo" para proximo uso
     fio.close();
 }
+
+
+void carroPorValor() {
+    int valor;
+    cout << "Informe o valor máximo (p/dia): ";
+    cin >> valor;
+    cout << endl;
+
+    int pos, posicao;
+    ClasseVeiculo molde;
+    fstream fio;
+    fio.open ("dados/veiculos.dat", ios::in|ios::out); //abre para leitura e escrita (ios::out) (ios::in) ios::app |
+    fio.clear();
+    fio.seekg(0,ios::beg); //coloca ponteiro no inicio do arquivo
+    while (fio.read ((char *)&molde,sizeof(ClasseVeiculo)))  // le do arquivo
+    {
+        pos = fio.tellp();
+        //cout << "\nPosição atual loop no arquivo P: " << pos << endl;
+        pos = fio.tellg();
+        //cout << "\nPosição atual loop no arquivo G: " << pos << endl;
+        if (molde.valor <= valor) {
+            cout << molde.modelo <<endl;
+        }
+    }
+    fio.clear(); // limpa "eof = final de arquivo" para proximo uso
+    fio.close();
+}
