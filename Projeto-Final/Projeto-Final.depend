@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1656960308 source:e:\github-repositorios\loca-mais-aeds\projeto-final\main.cpp
+1656971839 source:e:\github-repositorios\loca-mais-aeds\projeto-final\main.cpp
 	<iostream>
 	<fstream>
 	<ctime>
+	<locale>
 	"ClasseCliente.h"
 	"ClasseVeiculo.h"
 	"ClasseLocacao.h"
@@ -16,7 +17,7 @@
 	<iostream>
 	<fstream>
 
-1656960282 source:e:\github-repositorios\loca-mais-aeds\projeto-final\src\classeveiculo.cpp
+1656968752 source:e:\github-repositorios\loca-mais-aeds\projeto-final\src\classeveiculo.cpp
 	"ClasseVeiculo.h"
 	<iostream>
 	<string>
@@ -37,9 +38,9 @@
 1656959791 e:\github-repositorios\loca-mais-aeds\projeto-final\include\classelocacao.h
 	<iostream>
 
-1656957644 e:\github-repositorios\loca-mais-aeds\projeto-final\locacao-sistema.h
+1656971823 e:\github-repositorios\loca-mais-aeds\projeto-final\locacao-sistema.h
 
-1656957294 source:e:\github-repositorios\loca-mais-aeds\projeto-final\locacao-sistema.cpp
+1656971824 source:e:\github-repositorios\loca-mais-aeds\projeto-final\locacao-sistema.cpp
 	<iostream>
 	<fstream>
 	"ClasseCliente.h"

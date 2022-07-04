@@ -76,7 +76,7 @@ void salvarVeiculo(ClasseVeiculo veiculo) {
 }
 
 // Alterar dados
-void alterarVeiculo() {
+/*void alterarVeiculo() {
     int nrec, posicao;
     fstream fio;
     ClasseVeiculo molde;
@@ -95,13 +95,13 @@ void alterarVeiculo() {
 
         molde.alterarVeiculo(); // criar esse metodo
 
-       /* posicao = (nrec-1)*sizeof(ClasseVeiculo); // calcula posição
+        posicao = (nrec-1)*sizeof(ClasseVeiculo); // calcula posição
         fio.seekp(posicao,ios::beg); // posiciona no registro solicitado para gravar
         fio.write((char *)&molde, sizeof(ClasseVeiculo)); // grava no arquivo
-        fio.flush();*/
+        fio.flush();
     }
     fio.close();
-}
+}*/
 
 void mostrarVeiculos() {
     int pos, posicao;
@@ -163,5 +163,85 @@ void mostrarLocacao() {
     fio.close();
 }
 
-using namespace std;
+void locacoesDoCliente() {
+    fflush(stdin);
+    int pos, posicao;
+    ClasseLocacao molde;
+    fstream fio;
+    fio.open ("dados/locacoes.dat", ios::in|ios::out); //abre para leitura e escrita (ios::out) (ios::in) ios::app |
+    fio.clear();
+    fio.seekg(0,ios::beg); //coloca ponteiro no inicio do arquivo
 
+    int clienteCodigo;
+    cout << "Informe o cliente: ";
+    cin >> clienteCodigo;
+    cout << endl;
+
+    while (fio.read ((char *)&molde,sizeof(ClasseLocacao)))  // le do arquivo
+    {
+        pos = fio.tellp();
+        pos = fio.tellg();
+        if (molde.codigoCliete == clienteCodigo) {
+            molde.dadosLocacao();
+        }
+        cout << endl;
+    }
+    fio.clear(); // limpa "eof = final de arquivo" para proximo uso
+    fio.close();
+}
+
+void calcularFidelidade() {
+    fflush(stdin);
+    int pos, posicao;
+    ClasseLocacao molde;
+    fstream fio;
+    fio.open ("dados/locacoes.dat", ios::in|ios::out); //abre para leitura e escrita (ios::out) (ios::in) ios::app |
+    fio.clear();
+    fio.seekg(0,ios::beg); //coloca ponteiro no inicio do arquivo
+
+    int clienteCodigo;
+    cout << "Informe o cliente: ";
+    cin >> clienteCodigo;
+    cout << endl;
+
+    int dias;
+
+    while (fio.read ((char *)&molde,sizeof(ClasseLocacao)))  // le do arquivo
+    {
+        pos = fio.tellp();
+        pos = fio.tellg();
+        if (molde.codigoCliete == clienteCodigo) {
+            dias += molde.dias;
+        }
+    }
+
+    cout << "Pontos de fidelidade: " << (dias * 10) << endl;
+    fio.clear(); // limpa "eof = final de arquivo" para proximo uso
+    fio.close();
+}
+
+void pagarLocacao() {
+    fflush(stdin);
+    int pos, posicao;
+    ClasseLocacao molde;
+    fstream fio;
+    fio.open ("dados/locacoes.dat", ios::in|ios::out); //abre para leitura e escrita (ios::out) (ios::in) ios::app |
+    fio.clear();
+    fio.seekg(0,ios::beg); //coloca ponteiro no inicio do arquivo
+
+    int locacaoCodigo;
+    cout << "Informe a locacao: ";
+    cin >> locacaoCodigo;
+    cout << endl;
+
+    while (fio.read ((char *)&molde,sizeof(ClasseLocacao)))  // le do arquivo
+    {
+        pos = fio.tellp();
+        pos = fio.tellg();
+        if (molde.codigoLocacao == locacaoCodigo) {
+            cout << "Valor da locacao: " << molde.valorFinal << endl;
+        }
+    }
+    fio.clear(); // limpa "eof = final de arquivo" para proximo uso
+    fio.close();
+}

@@ -10,7 +10,6 @@ int proximoCodigoVeiculo = (ultimoCodigoVeiculo() + 1);
 
 void ClasseVeiculo::criarVeiculo()
 {
-    cout << proximoCodigoVeiculo << endl;
     codigo = proximoCodigoVeiculo++;
 
     cout << "Insira o modelo (string): ";

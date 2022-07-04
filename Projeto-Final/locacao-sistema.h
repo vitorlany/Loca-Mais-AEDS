@@ -11,4 +11,7 @@ void mostrarClientes();
 void mostrarVeiculos();
 void mostrarLocacao();
 
+void locacoesDoCliente();
+void calcularFidelidade();
+void pagarLocacao();
 #endif // LOCACAO-SISTEMA_H_INCLUDED
