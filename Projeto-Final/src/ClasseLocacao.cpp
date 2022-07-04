@@ -11,11 +11,11 @@ void salvarDados(ClasseLocacao locacao);
 int precoDiaria(int codigoVeiculo);
 int veiculoExiste(int codigoVeiculo);
 int clienteExiste(int codigoCliente);
-int ultimoCodigo();
+int ultimoCodigoLocacao();
 
 using namespace std;
 
-int proximoCodigoLocacao = (ultimoCodigo() + 1);
+int proximoCodigoLocacao = (ultimoCodigoLocacao() + 1);
 
 void ClasseLocacao::criarLocacao()
 {
@@ -47,7 +47,7 @@ void ClasseLocacao::criarLocacao()
         cout << "Insira o codigo do veiculo (int): ";
         cin >> codigoVeiculo;
         fflush(stdin);
-        if (clienteExiste(veiculoExiste(codigoVeiculo))) {
+        if (veiculoExiste(codigoVeiculo)) {
             break;
         } else {
             cout << "O veiculo nao existe!" << endl;
@@ -164,7 +164,7 @@ int precoDiaria(int codigoVeiculo) {
     return resposta;
 }
 
-int ultimoCodigo() {
+int ultimoCodigoLocacao() {
     int ultimo = 0,pos, posicao;
     ClasseLocacao molde;
     fstream fio;

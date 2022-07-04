@@ -13,11 +13,5 @@ int main()
 {
 
 
-
-    /*ClasseLocacao locacao;
-    locacao.criarLocacao();
-    locacao.dadosLocacao();
-    salvarLocacao(locacao);*/
-
     return 0;
 }

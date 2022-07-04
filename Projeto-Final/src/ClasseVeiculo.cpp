@@ -1,13 +1,16 @@
 #include "ClasseVeiculo.h"
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
-int proximoCodigoVeiculo = 0;
+int ultimoCodigoVeiculo();
+int proximoCodigoVeiculo = (ultimoCodigoVeiculo() + 1);
 
 void ClasseVeiculo::criarVeiculo()
 {
+    cout << proximoCodigoVeiculo << endl;
     codigo = proximoCodigoVeiculo++;
 
     cout << "Insira o modelo (string): ";
@@ -77,4 +80,22 @@ void ClasseVeiculo::alterarVeiculo() {
     cout << "Insira quantos ocupantes (int) [" << ocupantes << "]: ";
     cin >> ocupantes;
     fflush(stdin);
+}
+
+int ultimoCodigoVeiculo() {
+    int ultimo = 0,pos, posicao;
+    ClasseVeiculo molde;
+    fstream fio;
+    fio.open ("dados/veiculos.dat", ios::in|ios::out); //abre para leitura e escrita (ios::out) (ios::in) ios::app |
+    fio.clear();
+    fio.seekg(0,ios::beg); //coloca ponteiro no inicio do arquivo
+    while (fio.read ((char *)&molde,sizeof(ClasseVeiculo)))  // le do arquivo
+    {
+        pos = fio.tellp();
+        pos = fio.tellg();
+        ultimo = molde.codigo;
+    }
+    fio.clear(); // limpa "eof = final de arquivo" para proximo uso
+    fio.close();
+    return ultimo;
 }
