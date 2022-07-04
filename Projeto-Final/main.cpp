@@ -48,6 +48,7 @@ int main()
                 ClasseLocacao locacao;
                 locacao.criarLocacao();
                 salvarLocacao(locacao);
+                break;
             }
             case 4: {
                 pagarLocacao();
